@@ -1,4 +1,4 @@
-#define RGB_PACK 1  // 0 - RGB16, 1 - RGB8
+#define RGB_PACK 0  // 0 - RGB16, 1 - RGB8
 
 #include <Adafruit_GFX.h>    // Core graphics library
 #include <Adafruit_ST7735.h> // Hardware-specific library

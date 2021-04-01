@@ -1,7 +1,7 @@
 int w = 160;
 int h = 128;
 int baud = 2000000;
-byte pack = 1;  // 2 - RGB16, 1 - RGB8
+byte pack = 2;  // 2 - RGB16, 1 - RGB8
 
 // установить либу video
 import processing.video.*;
