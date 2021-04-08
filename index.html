@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drawer</title>
+</head>
+<body>
+Generate image as array from selected checkboxes <br>
+<input type="text" id="offsetx" placeholder="offsetx">
+<input type="text" id="offsety" placeholder="offsety">
+<button onclick="run()">Run</button>
+<table id="table">
+
+</table>
+<script>
+    const buttons = []
+    const t = document.getElementById("table")
+    for(let i = 0; i < 30; i++){
+        let line = t.appendChild(document.createElement("tr"))
+        buttons.push([])
+        for(let o = 0; o < 30; o++){
+            let e =document.createElement("td")
+            let input = document.createElement("input")
+            input.type = "checkbox"
+            buttons[i].push(input)
+            e.appendChild(input)
+
+            line.appendChild(e)
+        }
+    }
+    function run(){
+        let res = `[`
+        for(let i = 0; i < buttons.length; i++){
+            for(let o = 0; o < buttons[i].length; o++){
+                if (buttons[i][o].checked)
+                    res += `(${o+parseInt(offsety.value)}, ${i+parseInt(offsetx.value)}),\n`
+            }
+        }
+        res += `]`
+        console.log(res)
+        alert("Look to the console! (F12)")
+    }
+</script>
+</body>
+</html>
